@@ -7,3 +7,6 @@ INSERT INTO resources(name, type, capacity, description) VALUES
                                                              ('A1 terem', 'ROOM', 30, 'Projektoros oktatóterem'),
                                                              ('B2 tárgyaló', 'ROOM', 8, 'Kis meetingekhez'),
                                                              ('Epson X200', 'PROJECTOR', NULL, 'HD projektor');
+INSERT INTO users(email, password_hash, role)
+VALUES ('user@example.com', '$2a$10$0T2mYFbdO7k5X3Y2u8n3Se3b2f1qJ9g7tGEqgYyKqf0g7vNnGJmO.', 'USER');
+-- jelszó: User123!
