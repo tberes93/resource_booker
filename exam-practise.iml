@@ -19,5 +19,19 @@
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons:3.1.4" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:3.1.4" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:3.1.4" level="project" />
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar://$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="Maven: io.jsonwebtoken:jjwt-api:0.11.5" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.15.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-beans:6.0.12" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:10.1.13" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:6.1.4" level="project" />
   </component>
 </module>
