@@ -14,4 +14,7 @@ public interface BookingRepository extends JpaRepository<Booking, UUID> {
     List<Booking> findOverlaps(@Param("rid") UUID resourceId,
                                @Param("start") LocalDateTime start,
                                @Param("end") LocalDateTime end);
+
+    @Query("select b from Booking b where (:from is null or b.end > :from) and (:to is null or b.start < :to)")
+    List<Booking> findInRange(@Param("from") LocalDateTime from, @Param("to") LocalDateTime to);
 }

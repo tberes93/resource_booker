@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:25432/app
+    url: jdbc:postgresql://localhost:25431/postgres
     username: app
     password: app
   flyway:
@@ -18,5 +18,5 @@ server:
 
 app:
   jwt:
-    secret: "change-me-please-32chars-min"
+    secret: "0123456789ABCDEF0123456789ABCDEF"
     issuer: "resource-booker"
