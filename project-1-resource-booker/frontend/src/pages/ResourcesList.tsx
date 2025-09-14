@@ -1,23 +1,33 @@
-import { useEffect, useState } from 'react';
-import { api } from '../api';
+// ResourceList.tsx
+import { useEffect, useState } from "react";
+import { api } from "../api";
 
-type Resource = { id: string; name: string; type: string; capacity?: number; description?: string };
+type Resource = { id: string; name: string; type: string; description: string };
 
-export default function ResourcesList() {
-    const [data, setData] = useState<Resource[]>([]);
+export default function ResourceList() {
+    const [resources, setResources] = useState<Resource[]>([]);
+
     useEffect(() => {
-        api.get('/api/resources').then(r => setData(r.data));
+        api.get("/api/resources").then(res => setResources(res.data));
     }, []);
+
     return (
-        <main className="mx-auto max-w-3xl p-6">
-            <h1 className="text-2xl font-bold mb-4">Erőforrások</h1>
-            <ul className="space-y-2">
-                {data.map(r => (
-                    <li key={r.id} className="p-4 rounded-xl shadow">
-                        {r.name} – {r.type} {r.capacity?`(${r.capacity} fő)`:''}
-                    </li>
+        <div>
+            <h1 style={{ marginBottom: "16px" }}>Elérhető erőforrások</h1>
+            <div className="book-list">
+                {resources.map(r => (
+                    <div className="book-card" key={r.id}>
+                        <div>
+                            <h2>{r.name}</h2>
+                            <p><strong>Típus:</strong> {r.type}</p>
+                            <p>{r.description}</p>
+                        </div>
+                        <button onClick={() => alert(`Foglalás indítása: ${r.name}`)}>
+                            Foglalás
+                        </button>
+                    </div>
                 ))}
-            </ul>
-        </main>
+            </div>
+        </div>
     );
 }

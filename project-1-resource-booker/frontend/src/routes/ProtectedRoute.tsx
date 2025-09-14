@@ -4,6 +4,6 @@ import {useAuth} from "../auth/AuthContext.tsx";
 
 export default function ProtectedRoute({ children }: { children: JSX.Element }) {
     const { role } = useAuth();
-    return role === 'ADMIN' ? children : <Navigate to="/login" replace />;
+    return role === 'USER' || role === 'ADMIN' ? children : <Navigate to="/login" replace />;
 }
 
